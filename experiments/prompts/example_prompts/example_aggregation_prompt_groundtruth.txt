@@ -1,0 +1,41 @@
+Consider dialogues between a user and a system with a list of terms that occur in the dialogue. These terms can be domains (i.e., general topics for interaction), slots (constructs belonging to a particular topic), and values (concrete instantiations of such constructs) for a goal-oriented dialogue system. We define three directed hierarchical relations that should be predicted between two terms, which also denote which category each of the terms belongs to (i.e. domain, slot or value). 
+
+The first relation is the 'has slot' relation that is predicted between a domain and a slot and denotes that the domain term has the second term as slot. The relational triple then looks likes this: [domain, has slot, slot]. The second relation is the 'has value' relation between a slot and a value that denotes that the given slot term has the second term as value. The relational triple then looks like this: [slot, has value, value]. The third relation is the 'has domain' relation between a value and a domain that denotes that the given value belongs to the given domain. The relational triple then looks like this: [value, has domain, domain]. It is important to note that these three relations are directed, so that only hold in one direction. Apart from that each value term needs to be related to at least one slot and each slot to at least one domain. Between terms from the same category there can be a 'refers to same concept as' relation that denotes that two terms refer to the same concept, while only differing in their exact phrasing. This relation is symmetric and transitive. The relational triple then looks like this: [term1, refers to same concept as, term2].
+
+You get the dialogue and a list of terms from the dialogue as input.
+Also you will get the relations that were so far predicted in other dialogues as input where new relations can be added based on the current dialogue. It can also happen that all relations from the current dialogue are already present in the past predictions. 
+
+Here are the predicted relations so far:
+
+[['book day', 'has value', 'tuesday'], ['book stay', 'has value', '3'], ['hotel', 'has slot', 'book stay'], ['hotel', 'has slot', 'type'], ['choice', 'has value', '1'], ['hotel', 'has slot', 'choice'], ['parking', 'has value', 'yes'], ['type', 'has value', 'hotel'], ['book people', 'has value', '6'], ['hotel', 'has slot', 'book people'], ['hotel', 'has slot', 'book day'], ['hotel', 'has slot', 'ref'], ['hotel', 'has slot', 'price range'], ['ref', 'has value', '7gawk763'], ['book stay', 'has value', '2'], ['hotel', 'has slot', 'parking'], ['price range', 'has value', 'cheap']]
+
+
+Here is the dialogue:
+
+"user": "hi , i ' m looking for a train that is going to cambridge and arriving there by 20 : 45 , is there anything like that ?"
+"system": "there are over 1 , 000 trains like that . where will you be departing from ?"
+"user": "i am departing from birmingham new street ."
+"system": "can you confirm your desired travel day ?"
+"user": "i would like to leave on wednesday"
+"system": "i show a train leaving birmingham new street at 17 : 40 and arriving at 20 : 23 on wednesday . will this work for you ?"
+"user": "that will , yes . please make a booking for 5 people please ."
+"system": "i ' ve booked your train tickets , and your reference number is a9nhso9y ."
+"user": "thanks so much . i would also need a place to say . i am looking for something with 4 stars and has free wifi ."
+"system": "how about the cambridge belfry ? it has all the attributes you requested and a great name ! maybe even a real belfry ?"
+"user": "that sounds great , could you make a booking for me please ?"
+"system": "what day would you like your booking for ?"
+"user": "please book it for wednesday for 5 people and 5 nights , please ."
+"system": "booking was successful . reference number is : 5nawgjdc ."
+"user": "thank you , goodbye"
+"system": "goodbye . if you think of anything else you need don ' t hesitate to contact us ."
+
+Here is the list of terms:
+
+['4', '20 : 45', '000', '17 : 40', 'over 1', 'name', 'train', '5', 'the cambridge belfry', '5nawgjdc', 'stars', 'cambridge', 'birmingham new street', 'day', 'wednesday', '20 : 23', 'yes', 'a9nhso9y'] 
+
+
+
+The output should be the predictions for the relations in the current dialogue added to the relations so far.
+The output should be a list of relational triples in the form [[headterm1, relation, tailterm1], ..., [headtermN, relation, tailtermN]].
+Terms from relations so far can also be related to terms in the current dialogue even if they are not mentioned.
+Now predict the relations for the given dialogue and list of terms and output the list of relational triplets. Make sure to only output the total list of relations, i.e. old plus new relations, no additional information.

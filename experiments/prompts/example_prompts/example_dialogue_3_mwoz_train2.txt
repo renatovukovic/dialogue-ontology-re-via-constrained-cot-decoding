@@ -1,0 +1,22 @@
+"user": "hi , i ' m looking for a train that is going to cambridge and arriving there by 20 : 45 , is there anything like that ?"
+"system": "there are over 1 , 000 trains like that . where will you be departing from ?"
+"user": "i am departing from birmingham new street ."
+"system": "can you confirm your desired travel day ?"
+"user": "i would like to leave on wednesday"
+"system": "i show a train leaving birmingham new street at 17 : 40 and arriving at 20 : 23 on wednesday . will this work for you ?"
+"user": "that will , yes . please make a booking for 5 people please ."
+"system": "i ' ve booked your train tickets , and your reference number is a9nhso9y ."
+"user": "thanks so much . i would also need a place to say . i am looking for something with 4 stars and has free wifi ."
+"system": "how about the cambridge belfry ? it has all the attributes you requested and a great name ! maybe even a real belfry ?"
+"user": "that sounds great , could you make a booking for me please ?"
+"system": "what day would you like your booking for ?"
+"user": "please book it for wednesday for 5 people and 5 nights , please ."
+"system": "booking was successful . reference number is : 5nawgjdc ."
+"user": "thank you , goodbye"
+"system": "goodbye . if you think of anything else you need don ' t hesitate to contact us ."
+
+termlist: 
+['4', '20 : 45', '000', '17 : 40', 'over 1', 'name', 'train', '5', 'the cambridge belfry', '5nawgjdc', 'stars', 'cambridge', 'birmingham new street', 'day', 'wednesday', '20 : 23', 'yes', 'a9nhso9y'] 
+
+relation triplets: 
+[['departure', 'has value', 'birmingham new street'], ['ref', 'has value', '5nawgjdc'], ['train', 'has slot', 'arrive by'], ['train', 'has slot', 'departure'], ['choice', 'has value', 'over 1'], ['internet', 'has value', 'yes'], ['hotel', 'has slot', 'ref'], ['hotel', 'has slot', 'book day'], ['hotel', 'has slot', 'book people'], ['arrive by', 'has value', '20 : 23'], ['destination', 'has value', 'cambridge'], ['train', 'has slot', 'choice'], ['train', 'has slot', 'leave at'], ['leave at', 'has value', '17 : 40'], ['hotel', 'has slot', 'stars'], ['stars', 'has value', '4'], ['hotel', 'has slot', 'internet'], ['hotel', 'has slot', 'name'], ['ref', 'has value', 'a9nhso9y'], ['choice', 'has value', '000'], ['book day', 'has value', 'wednesday'], ['book stay', 'has value', '5'], ['book people', 'has value', '5'], ['train', 'has slot', 'ref'], ['name', 'has value', 'the cambridge belfry'], ['train', 'has slot', 'destination'], ['train', 'has slot', 'book people'], ['train', 'has slot', 'day'], ['hotel', 'has slot', 'book stay'], ['arrive by', 'has value', '20 : 45'], ['day', 'has value', 'wednesday']]

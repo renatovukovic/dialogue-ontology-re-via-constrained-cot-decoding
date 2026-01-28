@@ -1,0 +1,16 @@
+"user": "hello , i have been robbed . can you please help me get in touch with the police ?"
+"system": "parkside police station is in parkside , cambridge . their number is 01223358966 . anything else i can do for you ?"
+"user": "can i please have the postcode as well ?"
+"system": "the postcode for the parkside police station is cb11jg . can i help you with anything else ?"
+"user": "was parkside the address of the police station ? if not , can i have the address please ?"
+"system": "yes , parkside is the address ."
+"user": "thank you that will be all for now ."
+"system": "great . thank you for contacting cambridge towninfo centre ."
+"user": "you were great . goodbye ."
+"system": "we are happy to help . have a good day !"
+
+termlist: 
+['parkside , cambridge', 'police', 'parkside police station', 'address', 'cb11jg', 'postcode', '01223358966'] 
+
+relation triplets: 
+[['police', 'has slot', 'name'], ['police', 'has slot', 'phone'], ['phone', 'has value', '01223358966'], ['address', 'has value', 'parkside , cambridge'], ['police', 'has slot', 'postcode'], ['postcode', 'has value', 'cb11jg'], ['name', 'has value', 'parkside police station'], ['police', 'has slot', 'address']]

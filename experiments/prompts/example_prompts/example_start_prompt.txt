@@ -1,0 +1,37 @@
+Consider dialogues between a user and a system with a list of terms that occur in the dialogue. These terms can be domains (i.e., general topics for interaction), slots (constructs belonging to a particular topic), and values (concrete instantiations of such constructs) for a goal-oriented dialogue system. We define three directed hierarchical relations that should be predicted between two terms, which also denote which category each of the terms belongs to (i.e. domain, slot or value). 
+
+The first relation is the 'has slot' relation that is predicted between a domain and a slot and denotes that the domain term has the second term as slot. The relational triple then looks likes this: [domain, has slot, slot]. The second relation is the 'has value' relation between a slot and a value that denotes that the given slot term has the second term as value. The relational triple then looks like this: [slot, has value, value]. The third relation is the 'has domain' relation between a value and a domain that denotes that the given value belongs to the given domain. The relational triple then looks like this: [value, has domain, domain]. It is important to note that these three relations are directed, so that only hold in one direction. Apart from that each value term needs to be related to at least one slot and each slot to at least one domain. Between terms from the same category there can be a 'refers to same concept as' relation that denotes that two terms refer to the same concept, while only differing in their exact phrasing. This relation is symmetric and transitive. The relational triple then looks like this: [term1, refers to same concept as, term2].
+
+You get the dialogue and a list of terms from the dialogue as input.
+Also you will get the relations that were so far predicted in other dialogues as input where new relations can be added based on the current dialogue. It can also happen that all relations from the current dialogue are already present in the past predictions. 
+
+
+Here are the predicted relations so far:
+
+[]
+
+Here is the dialogue:
+
+
+"user": "am looking for a place to to stay that has cheap price range it should be in a type of hotel"
+"system": "okay , do you have a specific area you want to stay in ?"
+"user": "no , i just need to make sure it ' s cheap . oh , and i need parking"
+"system": "i found 1 cheap hotel for you that includes parking . do you like me to book it ?"
+"user": "yes , please . 6 people 3 nights starting on tuesday ."
+"system": "i am sorry but i wasn ' t able to book that for you for tuesday . is there another day you would like to stay or perhaps a shorter stay ?"
+"user": "how about only 2 nights ."
+"system": "booking was successful .
+ reference number is : 7gawk763 . anything else i can do for you ?"
+"user": "no , that will be all . good bye ."
+"system": "thank you for using our services ."
+
+
+Here is the list of terms:
+
+['2', '7gawk763', 'cheap', '1', 'tuesday', 'type', '6', 'price range', 'parking', 'hotel', '3']  
+
+
+The output should be the predictions for the relations in the current dialogue added to the relations so far.
+The output should be a list of relational triples in the form [[headterm1, relation, tailterm1], ..., [headtermN, relation, tailtermN]].
+Terms from relations so far can also be related to terms in the current dialogue even if they are not mentioned.
+Now predict the relations for the given dialogue and list of terms and output the list of relational triplets. Make sure to only output the total list of relations, i.e. old plus new relations, no additional information.

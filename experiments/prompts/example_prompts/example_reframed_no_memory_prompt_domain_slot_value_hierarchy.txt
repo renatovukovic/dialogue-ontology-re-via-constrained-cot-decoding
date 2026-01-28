@@ -1,0 +1,25 @@
+You are an expert in ontology construction with from a set of domain, slot and value candidate terms in task-oriented dialogue.
+
+Here is the dialogue:
+
+
+"user": "am looking for a place to to stay that has cheap price range it should be in a type of hotel"
+"system": "okay , do you have a specific area you want to stay in ?"
+"user": "no , i just need to make sure it ' s cheap . oh , and i need parking"
+"system": "i found 1 cheap hotel for you that includes parking . do you like me to book it ?"
+"user": "yes , please . 6 people 3 nights starting on tuesday ."
+"system": "i am sorry but i wasn ' t able to book that for you for tuesday . is there another day you would like to stay or perhaps a shorter stay ?"
+"user": "how about only 2 nights ."
+"system": "booking was successful .
+ reference number is : 7gawk763 . anything else i can do for you ?"
+"user": "no , that will be all . good bye ."
+"system": "thank you for using our services ."
+
+
+Here is the list of terms from the dialogue:
+
+['2', '7gawk763', 'cheap', '1', 'tuesday', 'type', '6', 'price range', 'parking', 'hotel', '3']  
+
+Predict a hierarchical ontology with domains at the top level that have slots with values.
+Put connected terms from the same hierarchy level that refer to the same concept together.
+Print the predicted hierarchy in JSON format.

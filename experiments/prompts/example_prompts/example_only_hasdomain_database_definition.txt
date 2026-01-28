@@ -1,0 +1,23 @@
+You are an expert in reverse engineering a data-base from a task-oriented dialogue. As input you get a dialogue about entities from a data-base. Here, domains are collections of entities with slots. Different domains are distinguished by having different slots. Slots are different information types of entities in a domain. Values are concrete instantiations of slots.  Also you get a list of domain, slot, value candidate terms as input.
+
+Here is the dialogue:
+"user": "howdy , i need a train heading into cambridge ."
+"system": "i would be happy to help you find a train . where are you departing from ?"
+"user": "i am departing from norwich . i need to leave after 18 : 45 on wednesday ."
+"system": "i have several options for you . where is your destination ?"
+"user": "i will be heading to cabridge"
+"system": "the earliest after 18 : 45 is the tr8658 , leaving norwich at 19 : 16 . can i reserve you one or more seats on this train ?"
+"user": "yeah , i need one ticket"
+"system": "booking was successful , the total fee is 17 . 6 gbp payable at the station . your reference number is axh1nm1i . do you need assistance with anything else ?"
+"user": "i am also looking for a multi sport in the east ."
+"system": "it looks like there is the cherry hinton village centre . can i get you more information about it ?"
+"user": "i would like to get the phone number , please ."
+"system": "their phone number is 01223576412 . anything else ?"
+"user": "oh , and what is their postcode , please ?"
+"system": "sure , the postcode is cb19ej . can i help you find any other information about cambridge ?"
+"user": "that is all for now thank you ."
+"system": "enjoy your time in cambridge !"
+
+Here is the list of terms:
+['cb19ej', 'phone', 'east', 'number', 'the cherry hinton village', 'reference', 'departing', 'postcode', 'leave', '17 . 6 gbp', 'destination', 'tr8658', 'one', 'train', 'fee', 'axh1nm1i', 'norwich', 'wednesday', '01223576412', 'reference number', '18 : 45', 'leaving', 'cambridge', '19 : 16']
+Predict for each value in the term list to which domain from the term list it belongs to. Predict the 'has domain' relation between values and domains in the form [valuename, has domain, domainname]. Make sure to put brackets around each relational triplet!

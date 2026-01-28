@@ -1,0 +1,8 @@
+{
+	"task_description": "You are an expert in ontology construction from a set of domain (general topic), slot (information type about entities in a domain) or value (concrete instances of information in slots) candidate terms in task-oriented dialogue.",
+	"dialogue": "Here is the dialogue:",
+	"term_list": "Here is the list of terms:",
+	"relations_so_far": "",
+	"output_instruction": "Predict relations in the dialogue between those given terms that are domains, slots or values. Predict the 'is equivalent' relation between terms from the same category (i.e. both are either domain, slot or value) in the form [term1, is equivalent, term2]. Make sure to put brackets around each relational triplet!"
+  }
+  
